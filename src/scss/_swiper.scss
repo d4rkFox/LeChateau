@@ -1,0 +1,32 @@
+.swiper-pagination-bullet {
+    background-color: #8d8d8d;
+}
+
+.swiper-button-wrapper {
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    width: 100%;
+    transform: translateY(-50%);
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: #e2e2e2;
+    outline: transparent;
+    transition: 0.3s;
+
+    &:hover,
+    &:focus {
+        color: #bbb;
+        transform: scale(1.3);
+    }
+}
+
+.swiper-button-next {
+    right: -35px;
+}
+
+.swiper-button-prev {
+    left: -35px;
+}

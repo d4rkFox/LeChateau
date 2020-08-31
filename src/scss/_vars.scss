@@ -1,0 +1,41 @@
+@mixin g400 {
+    font-family: EBGaramond, sans-serif;
+    font-style: italic;
+    font-weight: 400;
+}
+
+@mixin m400 {
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
+
+@mixin m700 {
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+}
+
+@mixin r300 {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 300;
+}
+
+@mixin ri300 {
+    font-family: Roboto, sans-serif;
+    font-style: italic;
+    font-weight: 300;
+}
+
+@mixin r700 {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+}
+
+@mixin img {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
