@@ -205,7 +205,69 @@
 }
 
 //end section desc=======================================================================================
+//start section card=====================================================================================
+.grid-sizer {
+    width: 25%;
+    height: 600px;
+}
 
+.card {
+    float: left;
+    width: 25%;
+    height: 600px;
+    padding: 20px;
+    font-size: 16px;
+    text-align: center;
+    transition: 0.3s;
+
+    &:hover,
+    &:focus {
+        background-color: #d9d9d9;
+    }
+
+    &__img-wrapper {
+        max-width: 235px;
+        height: 340px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 20px;
+        object-fit: cover;
+        cursor: pointer;
+        outline: transparent;
+        transition: 0.3s;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    &__title {
+        margin-top: 30px;
+        margin-bottom: 15px;
+        @include r700;
+    }
+
+    &__text {
+        margin-bottom: 5px;
+    }
+
+    &__price {
+        margin: 25px 0;
+        font-size: 24px;
+    }
+
+    &__btn {
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+}
+
+//end section card=======================================================================================
 //start section product==================================================================================
 .product {
     position: relative;
@@ -239,6 +301,18 @@
             font-size: 22px;
             content: "\f107";
             transition: 0.3s;
+        }
+    }
+
+    &__items {
+        margin-bottom: 50px;
+
+        &--tie .card {
+            height: 510px;
+
+            &__img-wrapper {
+                height: 240px;
+            }
         }
     }
 
@@ -276,7 +350,7 @@
         display: block;
         transition: 0.3s;
 
-        & + & {
+        &+& {
             border-top: 1px solid rgba(0, 0, 0, 0.1);
         }
 
@@ -308,56 +382,6 @@
 }
 
 //end section product====================================================================================
-//start section card=====================================================================================
-.card {
-    float: left;
-    width: 25%;
-    padding: 20px;
-    margin-bottom: 30px;
-    font-size: 16px;
-    text-align: center;
-    transition: 0.3s;
-
-    &:hover,
-    &:focus {
-        background-color: #d9d9d9;
-    }
-
-    &__img {
-        width: 100%;
-        margin-bottom: 20px;
-        object-fit: cover;
-        cursor: pointer;
-        outline: transparent;
-        transition: 0.3s;
-        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-
-        &:hover,
-        &:focus {
-            transform: scale(1.1);
-        }
-    }
-
-    &__title {
-        margin-bottom: 15px;
-        @include r700;
-    }
-
-    &__text {
-        margin-bottom: 5px;
-    }
-
-    &__price {
-        margin: 25px 0;
-        font-size: 24px;
-    }
-
-    &__btn {
-        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    }
-}
-
-//end section card=======================================================================================
 
 //start section features=================================================================================
 .features {
@@ -725,7 +749,7 @@
     }
 
     &__icon {
-        & + & {
+        &+& {
             margin-left: 5px;
         }
     }

@@ -46,6 +46,56 @@ $(function () {
     });
     //end Swiper modal window ===========================================================
 
+    var auxiliaryVariableScroll = 0;
+    var info = $(".features");
+    var infoTop = info.offset().top;
+    $(window).scroll(function () {
+        var windowTop = $(this).scrollTop();
+        if (windowTop > infoTop && auxiliaryVariableScroll === 0) {
+            //start reviewsSlider ==============================================================
+            var reviewsSlider = new Swiper(".reviews__slider", {
+                // Optional parameters
+                loop: true,
+                slidesPerView: 3,
+                spaceBetween: 30,
+                autoplay: {
+                    delay: 2500,
+                    // disableOnInteraction: false,
+                },
+
+                // Pagination
+                pagination: {
+                    el: ".swiper-pagination",
+                    dynamicBullets: true,
+                },
+
+                // Navigation arrows
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                breakpoints: {
+                    320: {
+                        slidesPerView: 1,
+                    },
+                    576: {
+                        slidesPerView: 2,
+                    },
+                    992: {
+                        slidesPerView: 3,
+                    },
+                },
+            });
+            //end reviewsSlider =================================================================
+
+            $(".info__map").attr(
+                "src",
+                "https://yandex.ru/map-widget/v1/?um=constructor%3A9af11766daec9ca63d06430e85c364b458a42042619810ba188bf9703abe48c6&source=constructor"
+            );
+            auxiliaryVariableScroll = 1;
+        }
+    });
+
     // start fancybox ===================================================================
     $(".btn").fancybox({
         baseClass: "popup__wrapper",
@@ -177,7 +227,7 @@ $(function () {
 
     $("#tie7").on("click", function () {
         $(".one").css("background-image", "url(images/content/tie-4.jpg)");
-        $(".two").css( "background-image", "url(images/content/model-10.jpg)");
+        $(".two").css("background-image", "url(images/content/model-10.jpg)");
         $(".three").css("background-image", "url(images/content/model-4.jpg)");
     });
 
@@ -212,42 +262,6 @@ $(function () {
         $(".three").css("background-image", "url(images/content/model-3.jpg)");
     });
     //end Swiper images shirt ===============================================================================
-
-    //start reviewsSlider ==============================================================
-    var reviewsSlider = new Swiper(".reviews__slider", {
-        // Optional parameters
-        loop: true,
-        slidesPerView: 3,
-        spaceBetween: 30,
-        autoplay: {
-            delay: 2500,
-            // disableOnInteraction: false,
-        },
-
-        // Pagination
-        pagination: {
-            el: ".swiper-pagination",
-            dynamicBullets: true,
-        },
-
-        // Navigation arrows
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-        breakpoints: {
-            320: {
-                slidesPerView: 1,
-            },
-            576: {
-                slidesPerView: 2,
-            },
-            992: {
-                slidesPerView: 3,
-            },
-        },
-    });
-    //end reviewsSlider =================================================================
 
     //E-mail Ajax Send=======================================================================================
     $(".form").submit(function () {
@@ -292,6 +306,9 @@ $(function () {
         transitionDuration: 0,
         getSortData: {
             number: ".number parseInt",
+        },
+        masonry: {
+            columnWidth: ".grid-sizer",
         },
     });
 
@@ -348,14 +365,14 @@ $(function () {
     $("#increase-shirt").on("click", () => {
         shirt.isotope({
             sortBy: "number",
-            sortAscending: false,
+            sortAscending: true,
         });
     });
 
     $("#decrease-shirt").on("click", () => {
         shirt.isotope({
             sortBy: "number",
-            sortAscending: true,
+            sortAscending: false,
         });
     });
     //==end category shirt ====================================================================================
@@ -432,5 +449,5 @@ $(function () {
             keyThree = 1;
         }
     });
-    // end resize  media=====================================================================================
+    // // end resize  media=====================================================================================
 });
