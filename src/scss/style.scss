@@ -77,7 +77,7 @@
             z-index: 1;
             width: 20px;
             height: 4px;
-            content: '';
+            content: "";
             background-color: #fff;
             border-radius: 4px;
             transition: 0.3s;
@@ -120,7 +120,7 @@
             bottom: 0;
             width: 0;
             height: 2px;
-            content: '';
+            content: "";
             background-color: #fff;
             transition: 0.3s;
         }
@@ -142,7 +142,12 @@
     min-height: 649px;
     margin-top: 64px;
     color: #fff;
-    background-image: url(../images/square-bg.png), linear-gradient(to top, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
+    background-image: url(../images/square-bg.png),
+        linear-gradient(
+            to top,
+            rgba(255, 255, 255, 0.1),
+            rgba(255, 255, 255, 0.1)
+        );
 
     &__bg {
         position: absolute;
@@ -180,7 +185,7 @@
             top: 0;
             width: 73px;
             height: 2px;
-            content: '';
+            content: "";
             background-color: #ffa07a;
         }
     }
@@ -208,7 +213,7 @@
 //start section card=====================================================================================
 .grid-sizer {
     width: 25%;
-    height: 600px;
+    // height: 600px;
 }
 
 .card {
@@ -271,18 +276,16 @@
 //start section product==================================================================================
 .product {
     position: relative;
-    padding-top: 60px;
     margin-bottom: 60px;
 
     &__btn {
-        position: sticky;
         z-index: 2;
-        display: none;
         width: 100%;
         height: 44px;
         padding-top: 10px;
         text-align: center;
         cursor: pointer;
+        background-color: #dfdfdf;
     }
 
     &__btn-text {
@@ -297,7 +300,7 @@
             position: absolute;
             top: -1px;
             right: 0;
-            font-family: 'icomoon';
+            font-family: "icomoon";
             font-size: 22px;
             content: "\f107";
             transition: 0.3s;
@@ -326,11 +329,20 @@
         position: sticky;
         top: -1px;
         left: 0;
-        z-index: 5;
+        z-index: -1;
         float: left;
         width: 100%;
         text-align: center;
+        visibility: hidden;
         background-color: #f8f8f8;
+        opacity: 0;
+        transition: 0.5s;
+
+        &--active {
+            z-index: 1;
+            visibility: visible;
+            opacity: 1;
+        }
     }
 
     &__list {
@@ -350,7 +362,7 @@
         display: block;
         transition: 0.3s;
 
-        &+& {
+        & + & {
             border-top: 1px solid rgba(0, 0, 0, 0.1);
         }
 
@@ -405,7 +417,11 @@
         min-height: 390px;
         padding: 40px;
         text-align: center;
-        background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+        background-image: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+        );
     }
 
     &__bg {
@@ -717,7 +733,7 @@
             left: 50%;
             width: 50px;
             height: 3px;
-            content: '';
+            content: "";
             background-color: #333;
             transform: translateX(-50%);
         }
@@ -749,7 +765,7 @@
     }
 
     &__icon {
-        &+& {
+        & + & {
             margin-left: 5px;
         }
     }
@@ -823,7 +839,7 @@
             position: absolute;
             top: -2px;
             right: -20px;
-            font-family: 'icomoon';
+            font-family: "icomoon";
             font-size: 20px;
             content: "\f107";
         }
@@ -834,7 +850,7 @@
         }
 
         &:hover {
-            font-weight: 700;
+            text-shadow: 0 0 5px #fff;
             border-color: transparent;
         }
     }
@@ -858,23 +874,25 @@
 //start block dropdown===================================================================================
 .dropdown {
     position: relative;
-    display: none;
-    padding: 20px;
+    padding: 0 20px;
+    overflow: hidden;
     line-height: 16px;
     color: #333;
     background-color: #fff;
+    transition: 0.3s;
 
     &__title {
+        padding-top: 20px;
         margin-bottom: 10px;
         font-size: 18px;
         @include r700;
     }
 
     &__text {
+        padding-bottom: 20px;
         font-size: 13px;
     }
 }
-
 //end block dropdown=====================================================================================
 
 //start block description================================================================================
@@ -1103,7 +1121,7 @@
             bottom: 0;
             width: 0;
             height: 3px;
-            content: '';
+            content: "";
             background-color: #333;
             transition: 0.3s;
         }
@@ -1176,7 +1194,7 @@
             left: 0;
             width: 25px;
             height: 25px;
-            content: '';
+            content: "";
             background-image: url(../images/email.png);
             @include img;
         }
